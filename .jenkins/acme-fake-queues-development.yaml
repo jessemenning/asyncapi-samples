@@ -9,16 +9,29 @@ applicationName: Customer Facing Mobile Application
 applicationVersionId: hxd36iqulyh
 eventApiStateId: 1
 eventApiStateName: DRAFT
-environment: integration
+environment: development
 modelledEventMesh: acme-retail Store
-modelledEventMeshId: nk29cfpn55c
-eventPortalEnvironmentId: i6f2y4eviq3
+modelledEventMeshId: 46h17klzg1n
+eventPortalEnvironmentId: bvmn5likrk2
 logicalBroker: logical_broker_b
 queueDefinitions:
-- queueName: acme-retail.mobileapp.retail-order.updates.receive
+- queueName: CreatedHREvents
   queueSettings:
     accessType: exclusive
   topicSubscriptions:
-  - acme-retail/store-ops/retail-order/online-fulfilled/v1/*/*/*
-  - acme-retail/store-ops/retail-order/online-paid/v1/*/*/*
-  - acme-retail/store-ops/retail-order/online-cancelled/v1/*/*/*
+  - person/*/created
+  - person/other/topic
+- queueName: UpdatedHREvents
+  queueSettings:
+    accessType: non-exclusive
+  topicSubscriptions:
+  - person/*/updated
+  - person/other/topic
+  - person/third/topic
+- queueName: WHOLE_OTHER_QUEUE
+  queueSettings:
+    accessType: non-exclusive
+  topicSubscriptions:
+  - star/*/updated
+  - star/other/topic
+  - star/third/topic

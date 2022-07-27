@@ -96,7 +96,7 @@
     },
     "channels":
     {
-        "acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}":
+        "solace/cloud/{identification_0_1_0}":
         {
             "publish":
             {
@@ -112,13 +112,38 @@
                                 "destinationType": "queue",
                                 "deliveryMode": "persistent",
                                 "queue": {
-                                    "name": "acme-retail.mobileapp.retail-order.updates.receive",
+                                    "name": "CreatedHREvents",
                                     "topicSubscriptions": [
-                                        "acme-retail/store-ops/retail-order/online-fulfilled/v1/*/*/*",
-                                        "acme-retail/store-ops/retail-order/online-paid/v1/*/*/*",
-                                        "acme-retail/store-ops/retail-order/online-cancelled/v1/*/*/*"
+                                        "person/*/created",
+                                        "person/other/topic"
                                     ],
                                     "accessType": "exclusive"
+                                }
+                            },
+                            {
+                                "destinationType": "queue",
+                                "deliveryMode": "persistent",
+                                "queue": {
+                                    "name": "UpdatedHREvents",
+                                    "topicSubscriptions": [
+                                        "person/*/updated",
+                                        "person/other/topic",
+                                        "person/third/topic"
+                                    ],
+                                    "accessType": "non-exclusive"
+                                }
+                            },
+                            {
+                                "destinationType": "queue",
+                                "deliveryMode": "persistent",
+                                "queue": {
+                                    "name": "WHOLE_OTHER_QUEUE",
+                                    "topicSubscriptions": [
+                                        "star/*/updated",
+                                        "star/other/topic",
+                                        "star/third/topic"
+                                    ],
+                                    "accessType": "non-exclusive"
                                 }
                             }
                         ]
