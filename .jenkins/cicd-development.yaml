@@ -1,7 +1,7 @@
 ---
 title: acme-retail-customer-mobile
 description: AsyncAPI for Customer Facing Mobile Application
-apiVersion: 0.1.56
+apiVersion: 0.1.57
 applicationDomainId: 9n3oj6yfxm3
 applicationDomainName: acme-retail - Store Operations
 applicationId: 28a372rrk0s
