@@ -1,7 +1,7 @@
 ---
 servers:
   integration:
-    url: integration-test-env
+    url: test
     description: Integration Test Environment
     protocol: solace
     protocolVersion: 1.0.0
@@ -10,7 +10,7 @@ servers:
     x-ep-environment-id: i6f2y4eviq3
     x-ep-logical-broker: logical_broker_b
   development:
-    url: development-env
+    url: development
     description: Development Environment
     protocol: solace
     protocolVersion: 1.0.0
@@ -19,7 +19,7 @@ servers:
     x-ep-environment-id: bvmn5likrk2
     x-ep-logical-broker: logical_broker_b
   production:
-    url: production-env
+    url: preprod
     description: Production Environment
     protocol: solace
     protocolVersion: 1.0.0
