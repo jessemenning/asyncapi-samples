@@ -8,7 +8,7 @@ servers:
     x-ep-modelled-event-mesh: acme-retail Store
     x-ep-modelled-event-mesh-id: nk29cfpn55c
     x-ep-environment-id: i6f2y4eviq3
-    x-ep-logical-broker: logical_broker_c
+    x-ep-logical-broker: logical_broker_d
   development:
     url: development-env
     description: Development Environment
@@ -17,7 +17,7 @@ servers:
     x-ep-modelled-event-mesh: acme-retail Store
     x-ep-modelled-event-mesh-id: 46h17klzg1n
     x-ep-environment-id: bvmn5likrk2
-    x-ep-logical-broker: logical_broker_c
+    x-ep-logical-broker: logical_broker_d
   preprod:
     url: preprod-env
     description: Production Environment
@@ -26,7 +26,7 @@ servers:
     x-ep-modelled-event-mesh: acme-retail Store
     x-ep-modelled-event-mesh-id: nb0b6yoojr2
     x-ep-environment-id: 7k9gh388bd7
-    x-ep-logical-broker: logical_broker_c
+    x-ep-logical-broker: logical_broker_d
 components:
   schemas:
     PersonSchema_0_1_0:
