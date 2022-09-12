@@ -110,6 +110,13 @@ channels:
           enum:
           - one
           - two
+      product:
+        schema:
+          type: string
+          enum:
+          - shoes
+          - tshirts
+          - socks
 asyncapi: 2.0.0
 info:
   title: acme-retail-customer-mobile
