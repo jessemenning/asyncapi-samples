@@ -67,7 +67,7 @@ components:
       x-event-state-id: '1'
       x-event-version: 0.1.0
 channels:
-  acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}:
+  acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}/{product}:
     publish:
       message:
         "$ref": "#/components/messages/RegistrationEvent_0_1_0"
@@ -78,11 +78,11 @@ channels:
           - destinationType: queue
             deliveryMode: persistent
             queue:
-              name: acme-retail.mobileapp.retail-order.updates.receive
+              name: acme-retail.mobileapp.retail-order.shoes.updates.receive
               topicSubscriptions:
-              - acme-retail/store-ops/retail-order/online-fulfilled/v1/*/*/*
-              - acme-retail/store-ops/retail-order/online-paid/v1/*/*/*
-              - acme-retail/store-ops/retail-order/online-cancelled/v1/*/*/*
+              - acme-retail/store-ops/retail-order/online-fulfilled/v1/*/*/*/shoes
+              - acme-retail/store-ops/retail-order/online-paid/v1/*/*/*/shoes
+              - acme-retail/store-ops/retail-order/online-cancelled/v1/*/*/*/shoes
               accessType: exclusive
     parameters:
       retail_order_verb:
