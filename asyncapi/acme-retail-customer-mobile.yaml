@@ -89,8 +89,9 @@ channels:
         schema:
           type: string
           enum:
-          - one
-          - two
+          - online-fulfilled
+          - online-paid
+          - online-cancelled
       store_location:
         schema:
           type: string

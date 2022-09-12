@@ -15,7 +15,7 @@
 # JENKINS_TOKEN: your Jenkins token
 
 
-name: Process post merge
+name: Import AsyncAPI to Solace PubSub+ Event Portal
 on:
   push: 
     branches: [ main ]
