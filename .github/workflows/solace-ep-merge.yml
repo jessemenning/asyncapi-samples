@@ -13,6 +13,7 @@
 # JENKINS_HOST: your Jenkins host
 # JENKINS_USER: your Jenkins user
 # JENKINS_TOKEN: your Jenkins token
+# CLI_SOLACE_CLOUD_TOKEN: your Solace Cloud Token
 
 
 name: Import AsyncAPI to Solace PubSub+ Event Portal
@@ -73,8 +74,17 @@ jobs:
     needs: asyncapi-present
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Current Branch
+        uses: actions/checkout@master
+        with:
+          ref: ${{ github.ref }}
+
       - name: Import AsyncAPI spec file to EP
-        run: echo "Importing file"
+        env:
+          CLI_SOLACE_CLOUD_TOKEN: ${{ secrets.CLI_SOLACE_CLOUD_TOKEN }}
+          CLI_IMPORT_CREATE_API_APPLICATION: true
+        run: |
+          npx @solace-labs/ep-async-api-importer -fp ./${{needs.asyncapi-present.outputs.ASYNCAPI_FILE_PATH}} -d "${{ secrets.SOLACE_APPLICATION_DOMAIN }}"
 
   sync-asyncapi-with-ep:
     needs: import-asyncapi-file
