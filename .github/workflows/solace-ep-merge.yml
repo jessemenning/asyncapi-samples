@@ -14,6 +14,7 @@
 # JENKINS_USER: your Jenkins user
 # JENKINS_TOKEN: your Jenkins token
 # CLI_SOLACE_CLOUD_TOKEN: your Solace Cloud Token
+# SOLACE_APPLICATION_DOMAIN: Application Domain Name
 
 
 name: Import AsyncAPI to Solace PubSub+ Event Portal
