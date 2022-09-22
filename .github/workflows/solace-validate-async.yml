@@ -104,4 +104,16 @@ jobs:
           CLI_MODE: test_mode
         run: |
           npx @solace-labs/ep-async-api-importer -fp ./$ASYNCAPI_FILE_PATH -d "${{ secrets.SOLACE_APPLICATION_DOMAIN }}"
+      
+      - name: Validate Application version
+        run: |
+          if grep -q "version: 0.1.0" customer_mobile.yaml; then
+            exit 1
+          fi
+        
+
+
+
+
+
         
