@@ -29,7 +29,7 @@ servers:
 components:
   schemas:
     PersonSchema_0_1_0:
-      x-schema-version: 0.1.0
+      x-schema-version: 1.0.0
       x-schema-version-displayname: PersonSchema0.1.0
       $schema: 'http://json-schema.org/draft-07/schema#'
       x-schema-name: PersonSchema
@@ -63,9 +63,9 @@ components:
       contentType: application/json
       x-event-version-id: vflx6cvh6da
       x-event-state-id: '1'
-      x-event-version: 0.1.0
+      x-event-version: 1.0.0
 channels:
-  'acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}':
+  'acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}/{product}':
     x-ep-event-name: RegistrationEvent
     publish:
       message:
@@ -96,11 +96,14 @@ channels:
       order_id:
         schema:
           type: string
+      product:
+        schema:
+          type: string
 asyncapi: 2.4.0
 info:
   title: acme-retail-customer-mobile
   description: AsyncAPI for Customer Facing Mobile Application
-  version: 0.1.0
+  version: 0.2.0
   x-event-api-state-id: '1'
   x-event-api-state-name: DRAFT
   x-application-domain-id: 9n3oj6yfxm3
