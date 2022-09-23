@@ -65,7 +65,7 @@ components:
       x-event-state-id: '1'
       x-event-version: 1.0.0
 channels:
-  'acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}/{product}':
+  'acme-retail/store-ops/retail-order/{retail_order_verb}/v1/{store_location}/{customer_id}/{order_id}/{product}/{component}':
     x-ep-event-name: RegistrationEvent
     publish:
       message:
@@ -99,11 +99,14 @@ channels:
       product:
         schema:
           type: string
+      component:
+        schema:
+          type: string
 asyncapi: 2.4.0
 info:
   title: acme-retail-customer-mobile
   description: AsyncAPI for Customer Facing Mobile Application
-  version: 0.1.0
+  version: 0.2.0
   x-event-api-state-id: '1'
   x-event-api-state-name: DRAFT
   x-application-domain-id: 9n3oj6yfxm3
