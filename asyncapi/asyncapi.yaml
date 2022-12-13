@@ -8,7 +8,7 @@ servers:
     x-ep-modelled-event-mesh: acme-retail Store
     x-ep-modelled-event-mesh-id: nk29cfpn55c
     x-ep-environment-id: i6f2y4eviq3
-    x-ep-logical-broker: logical_broker_d
+    x-ep-logical-broker: logical_broker_a
   development:
     url: development-env
     description: Development Environment
